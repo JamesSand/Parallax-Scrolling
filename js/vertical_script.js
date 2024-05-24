@@ -77,14 +77,25 @@ $(document).ready(function(){
 					// Cache the sprite
 					var $sprite = $(this);
 
-					
-					
 					// Use the same calculation to work out how far to scroll the sprite
 					var yPos = -(scrollLeft / $sprite.data('speed'));					
 					// var coords = $sprite.data('Xposition') + ' ' + (yPos + $sprite.data('offsetY')) + 'px';
 
+					// console.log($sprite.attr("id"))
+					if ($sprite.attr("id") == "third_photo"){
+						$sprite.data('offsetY', 1.5 * $self.width());
+						console.log($sprite.attr("id"), $sprite.data('offsetY'))
+					}
+						
+
 					// change sequence
 					var coords = (yPos + $sprite.data('offsetY')) + 'px ' + $sprite.data('Xposition');
+
+					if ($sprite.attr("id") == "third_photo"){
+						console.log(yPos, $sprite.data('offsetY'), yPos + $sprite.data('offsetY'))
+						// $sprite.data('offsetY', 2 * $self.width());
+						// console.log($sprite.attr("id"), $sprite.data('offsetY'))
+					}
 
 					// console.log($sprite.attr("class"), coords)
 					
